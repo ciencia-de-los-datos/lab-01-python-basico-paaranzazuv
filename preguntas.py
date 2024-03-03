@@ -41,7 +41,7 @@ with open("data.csv","r") as csv_file:
  
 def pregunta_01(p1):
     y=[int(z[1]) for z in p1[0:]]
-    return print(sum(y))    
+    return sum(y)  
 pregunta_01(x)  
 
 
@@ -63,7 +63,7 @@ def pregunta_02(p2):
         q = (i, z)
         l2.append(q)
     t = sorted(l2)
-    return print(t)
+    return t
 
 pregunta_02(x)
 
@@ -110,7 +110,7 @@ def pregunta_03(p3):
     
     result_p3 = sorted(new_l3)
     
-    return(print (result_p3))
+    return result_p3
 
 pregunta_03(x)
 
@@ -139,7 +139,7 @@ def pregunta_04(p4):
             q = (i, z)
             l4.append(q)
             t = sorted(l4)
-    return print(t)
+    return t
 
 pregunta_04(x)
 
@@ -195,7 +195,7 @@ def pregunta_05(p5):
                  tupla = (i,max(diccionariomin[i]), min(diccionariomin[i]))
                  l51.append (tupla)
      result_p5 = sorted(l51)
-     return print (result_p5)
+     return result_p5
 
 pregunta_05(x)
 
@@ -236,7 +236,7 @@ def pregunta_06(p6):
     
     
     result_p6 = sorted(l61)
-    return print (result_p6)
+    return result_p6
 
 pregunta_06 (x)
 
@@ -282,7 +282,7 @@ def pregunta_07(p7):
     
     result_p7 = sorted(l7)
     
-    return print (result_p7)
+    return result_p7
 
 pregunta_07(x)
 """
@@ -326,7 +326,7 @@ def pregunta_08(p8):
     
     result_p8 = sorted(l8)
     
-    return print (result_p8)
+    return result_p8
 
 pregunta_08(x)
 
@@ -371,7 +371,7 @@ def pregunta_09(p9):
                          diccionario [key] = 0
             diccionario[key] += 1
 
-    return print(diccionario)
+    return diccionario
     
     
 pregunta_09(x)
@@ -410,7 +410,7 @@ def pregunta_10(p10):
          z=len(r[i][2])
          l10.append((f,p,z))
 
-    return print(l10)      
+    return l10    
 
 pregunta_10(x)
 """
@@ -450,7 +450,7 @@ def pregunta_11(p11):
                             diccionario11 [key] = 0
             diccionario11[key] += value
 
-    return print(diccionario11)
+    return  diccionario11
 
 
 pregunta_11(x)
@@ -490,9 +490,11 @@ def pregunta_12(p12):
             if key not in diccionario12.keys():
                 diccionario12[key]=0
             diccionario12[key] += value
-    return print(diccionario12)
+    return diccionario12
 
 pregunta_12(x)
+
+
               
 
 """
@@ -509,4 +511,3 @@ pregunta_12(x)
     }
 
     """
-   

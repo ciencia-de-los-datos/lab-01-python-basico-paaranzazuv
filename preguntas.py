@@ -12,17 +12,20 @@ Utilice el archivo `data.csv` para resolver las preguntas.
 
 """
 import csv 
-x=[ ]
-with open("data.csv","r") as csv_file:
-     csv_reader = csv.reader(
-        csv_file,
-        delimiter="\t",
-        quotechar='"',
-    )
-     for row in csv_reader:
-         x.append(row)
+
+# def leer(input):
+#     x=[ ]
+#     with open("data.csv","r") as csv_file:
+#         csv_reader = csv.reader(
+#             csv_file,
+#             delimiter="\t",
+#             quotechar='',
+#         )
+#         for row in csv_reader:
+#             x.append(row)
+#     return x
          
-    
+# print(leer("data.csv"))
     #
     # El for debe estar dentro del ambito
     # del bloque with
@@ -39,10 +42,18 @@ with open("data.csv","r") as csv_file:
 
 
  
-def pregunta_01(p1):
-    y=[int(z[1]) for z in p1[0:]]
+def pregunta_01():
+    x=[ ]
+    with open("data.csv","r") as csv_file:
+        csv_reader = csv.reader(
+            csv_file,
+            delimiter="\t",
+            quotechar='"',
+        )
+        for row in csv_reader:
+            x.append(row)
+    y = [int(z[1]) for z in x[0:]]
     return sum(y)  
-pregunta_01(x)  
 
 
 
@@ -54,9 +65,18 @@ pregunta_01(x)
 
 # """
 
-def pregunta_02(p2):
+def pregunta_02():
+    x=[ ]
+    with open("data.csv","r") as csv_file:
+        csv_reader = csv.reader(
+            csv_file,
+            delimiter="\t",
+            quotechar='"',
+        )
+        for row in csv_reader:
+            x.append(row)
     l2 = []
-    y = [z[0] for z in p2[0:]]
+    y = [z[0] for z in x[0:]]
     n=set(y)
     for i in n:
         z = y.count(i)
@@ -64,8 +84,6 @@ def pregunta_02(p2):
         l2.append(q)
     t = sorted(l2)
     return t
-
-pregunta_02(x)
 
 
 # 
@@ -86,33 +104,45 @@ pregunta_02(x)
 
 
 # #print(l3)
+ 
 
+def pregunta_03():
+    x=[ ]
+    with open("data.csv","r") as csv_file:
+        csv_reader = csv.reader(
+            csv_file,
+            delimiter="\t",
+            quotechar='"',
+        )
+        for row in csv_reader:
+            x.append(row)
 
-def pregunta_03(p3):
     l3 = []
     new_l3= []
     diccionario = {}
 
-    r = [z[0:2] for z in p3 [0:]]
+    r = [z[0:2] for z in x [0:]]
 
     for i,j in r:
         z = int (j)
         l3.append ((i,z))
     
     for key, value in l3:
+
+
         if key not in diccionario.keys():
             diccionario [key] = 0
         diccionario [key] += value
 
     for key, value in diccionario.items():
-            tupla = (key, (value))
+            tupla = (key, value)
             new_l3.append (tupla)
     
     result_p3 = sorted(new_l3)
     
     return result_p3
 
-pregunta_03(x)
+
 
 
 """
@@ -130,9 +160,20 @@ pregunta_03(x)
 
     """
 
-def pregunta_04(p4):
+def pregunta_04():
+
+    x=[ ]
+    with open("data.csv","r") as csv_file:
+        csv_reader = csv.reader(
+            csv_file,
+            delimiter="\t",
+            
+        )
+        for row in csv_reader:
+            x.append(row)
+
     l4=[]
-    y = [z[2].split("-")[1] for z in p4[0:]]
+    y = [z[2].split("-")[1] for z in x[0:]]
     h = set(y)
     for i in h:
             z = y.count(i)
@@ -140,16 +181,6 @@ def pregunta_04(p4):
             l4.append(q)
             t = sorted(l4)
     return t
-
-pregunta_04(x)
-
-
-
-
-
-
-
-
 
 
 """
@@ -174,12 +205,21 @@ pregunta_04(x)
 
     """
 
-def pregunta_05(p5):
+def pregunta_05():
+     x=[ ]
+     with open("data.csv","r") as csv_file:
+        csv_reader = csv.reader(
+            csv_file,
+            delimiter="\t",
+            quotechar='"',
+        )
+        for row in csv_reader:
+            x.append(row)
      l5 = []
      l51 = []  
      diccionariomin = {}
 
-     r = [z[0:2] for z in p5 [0:]]
+     r = [z[0:2] for z in x [0:]]
      for i, j in r:
         z = int (j)
         l5.append ((i,z))
@@ -197,7 +237,7 @@ def pregunta_05(p5):
      result_p5 = sorted(l51)
      return result_p5
 
-pregunta_05(x)
+
 
 """
 Retorne una lista de tuplas con el valor maximo y minimo de la columna 2 por cada
@@ -214,9 +254,18 @@ Rta/
 
 """
 # revisar como guardar en diccionerio una lista
-def pregunta_06(p6):
+def pregunta_06():
+    x=[ ]
+    with open("data.csv","r") as csv_file:
+        csv_reader = csv.reader(
+            csv_file,
+            delimiter="\t",
+            quotechar='"',
+        )
+        for row in csv_reader:
+            x.append(row)
     l6=[]
-    r = [z[4].split(",") for z in p6 [0:]] 
+    r = [z[4].split(",") for z in x [0:]] 
     for i in r:
         z=len(i)
         for j in range(z):
@@ -238,7 +287,7 @@ def pregunta_06(p6):
     result_p6 = sorted(l61)
     return result_p6
 
-pregunta_06 (x)
+
 
 """
     La columna 5 codifica un diccionario donde cada cadena de tres letras corresponde a
@@ -264,11 +313,20 @@ pregunta_06 (x)
 
 
 
-def pregunta_07(p7):
+def pregunta_07():
+    x=[ ]
+    with open("data.csv","r") as csv_file:
+        csv_reader = csv.reader(
+            csv_file,
+            delimiter="\t",
+            quotechar='"',
+        )
+        for row in csv_reader:
+            x.append(row)
     diccionario={}
     l7=[]
 
-    r = [z[0:2] for z in p7 [0:]]
+    r = [z[0:2] for z in x [0:]]
     
     for value, key in r:
             if key not in diccionario.keys(): ###### por que no corre  con or  diccionariomax.keys
@@ -284,7 +342,7 @@ def pregunta_07(p7):
     
     return result_p7
 
-pregunta_07(x)
+
 """
     Retorne una lista de tuplas que asocien las columnas 0 y 1. Cada tupla contiene un
     valor posible de la columna 2 y una lista con todas las letras asociadas (columna 1)
@@ -307,12 +365,21 @@ pregunta_07(x)
     """
 
 
-def pregunta_08(p8):
+def pregunta_08():
+    x=[ ]
+    with open("data.csv","r") as csv_file:
+        csv_reader = csv.reader(
+            csv_file,
+            delimiter="\t",
+            quotechar='"',
+        )
+        for row in csv_reader:
+            x.append(row)
 
     diccionario={}
     l8=[]
     
-    r = [z[0:2] for z in p8 [0:]]
+    r = [z[0:2] for z in x [0:]]
     
     for value, key in r:
             if key not in diccionario.keys(): 
@@ -328,7 +395,6 @@ def pregunta_08(p8):
     
     return result_p8
 
-pregunta_08(x)
 
 """
     Genere una lista de tuplas, donde el primer elemento de cada tupla contiene  el valor
@@ -353,10 +419,19 @@ pregunta_08(x)
     """
 
 
-def pregunta_09(p9):
+def pregunta_09():
+    x=[ ]
+    with open("data.csv","r") as csv_file:
+        csv_reader = csv.reader(
+            csv_file,
+            delimiter="\t",
+            quotechar='"',
+        )
+        for row in csv_reader:
+            x.append(row)
 
     l9=[]
-    r = [z[4].split(",") for z in p9 [0:]] 
+    r = [z[4].split(",") for z in x [0:]] 
     for i in r:
         z=len(i)
         for j in range(z):
@@ -374,7 +449,7 @@ def pregunta_09(p9):
     return diccionario
     
     
-pregunta_09(x)
+
 
 """
     Retorne un diccionario que contenga la cantidad de registros en que aparece cada
@@ -399,10 +474,19 @@ pregunta_09(x)
 """     
        
 
-def pregunta_10(p10):
+def pregunta_10():
+    x=[ ]
+    with open("data.csv","r") as csv_file:
+        csv_reader = csv.reader(
+            csv_file,
+            delimiter="\t",
+            quotechar='"',
+        )
+        for row in csv_reader:
+            x.append(row)
     
     l10 = []
-    r = [[z [0]] + [z[3].split(",")]+[z[4].split(",")] for z in p10 [0:]]
+    r = [[z [0]] + [z[3].split(",")]+[z[4].split(",")] for z in x [0:]]
 
     for i in range(len(r)):
          f=r[i][0]
@@ -412,7 +496,6 @@ def pregunta_10(p10):
 
     return l10    
 
-pregunta_10(x)
 """
 Retorne una lista de tuplas contengan por cada tupla, la letra de la columna 1 y la
 cantidad de elementos de las columnas 4 y 5.
@@ -430,11 +513,20 @@ cantidad de elementos de las columnas 4 y 5.
 """
 
 
-def pregunta_11(p11):
+def pregunta_11():
+    x=[ ]
+    with open("data.csv","r") as csv_file:
+        csv_reader = csv.reader(
+            csv_file,
+            delimiter="\t",
+            quotechar='"',
+        )
+        for row in csv_reader:
+            x.append(row)
 
     diccionario11 = {}
     l11 = []
-    r = [[z [3].split(",")] + [int(z[1])] for z in p11 [0:]]
+    r = [[z [3].split(",")] + [int(z[1])] for z in x [0:]]
     f = (len(r))
 
     for i in range (f):
@@ -453,7 +545,7 @@ def pregunta_11(p11):
     return  diccionario11
 
 
-pregunta_11(x)
+
 """
     Retorne un diccionario que contengan la suma de la columna 2 para cada letra de la
     columna 4, ordenadas alfabeticamente.
@@ -472,11 +564,20 @@ pregunta_11(x)
 
 """
  
-def pregunta_12(p12):
+def pregunta_12():
+    x=[ ]
+    with open("data.csv","r") as csv_file:
+        csv_reader = csv.reader(
+            csv_file,
+            delimiter="\t",
+            quotechar='"',
+        )
+        for row in csv_reader:
+            x.append(row)
     l12 = []
     diccionario12 = {}
 
-    r = [[z[0]]+[z[4].split(",")] for z in p12[0:]]
+    r = [[z[0]]+[z[4].split(",")] for z in x [0:]]
 
     for i in r:
             z=len(i[1])
@@ -492,7 +593,7 @@ def pregunta_12(p12):
             diccionario12[key] += value
     return diccionario12
 
-pregunta_12(x)
+
 
 
               

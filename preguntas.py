@@ -388,12 +388,13 @@ def pregunta_08():
 
     
     for key, value in diccionario.items():
-                tupla = (key, sorted(list(set(value))))
+                tupla = (int(key), sorted(list(set(value))))
                 l8.append (tupla)
     
     result_p8 = sorted(l8)
     
     return result_p8
+print(pregunta_08())
 
 
 """

@@ -335,14 +335,14 @@ def pregunta_07():
 
     
     for key, value in diccionario.items():
-                tupla = (key, (value))
+                tupla = (int(key), (value))
                 l7.append (tupla)
     
     result_p7 = sorted(l7)
     
     return result_p7
 
-
+print(pregunta_07())
 """
     Retorne una lista de tuplas que asocien las columnas 0 y 1. Cada tupla contiene un
     valor posible de la columna 2 y una lista con todas las letras asociadas (columna 1)
